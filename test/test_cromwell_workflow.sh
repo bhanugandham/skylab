@@ -44,7 +44,6 @@ STATUS_RESULT=$(cromwell-tools status \
 
 # get the status alone; cromwell tools is a bit more verbose
 STATUS=$(echo ${STATUS_RESULT} | python3 -c "import json,sys;obj=json.load(sys.stdin);print(obj['status']);")
-echo "${STATUS}"
 
 if [ "${STATUS}" == "Succeeded" ]; then
   echo "Test Successful. Workflow outputs matched expected values."
